@@ -10,9 +10,15 @@ while True:
     attempts += 1
 
     if guess < secret:
-        print("Too low!")
+        if secret - guess <= 5:
+            print("Too low! But you are very close!")
+        else:
+            print("Too low!")
     elif guess > secret:
-        print("Too high!")
+        if guess - secret <= 5:
+            print("Too high! But you are very close!")
+        else:
+            print("Too high!")
     else:
         print("Correct! You got it in " + str(attempts) + " attempts!")
         break
